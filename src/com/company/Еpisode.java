@@ -22,5 +22,5 @@ public class Еpisode {
         many_situation = new Еpisode[variants];
     }
 
-    public Еpisode(){}
+    Еpisode(){}
 }

@@ -17,7 +17,7 @@ public class Main {
             role.career += story.dCareer;
             System.out.println("Ваши подписчики: "+role.career+"; ваша репутация: "+role.reputation+
                     "; ваши сбережения: "+role.money+".");
-            System.out.println(story.now_episode.situation+"\n"+story.now_episode.value);
+            System.out.println(story.start.situation+"\n"+story.start.value);
             if(story.isEnd()){
                 System.out.println("Конец!");
                 return;
