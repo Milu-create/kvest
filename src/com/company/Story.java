@@ -1,8 +1,7 @@
 package com.company;
 
-public class Story extends Еpisode {
-    //public Еpisode now_episode;
-    public final Еpisode start = new Еpisode("Первый шаг к популярности",
+public class Story extends Episode {
+    public final Episode start = new Episode("Первый шаг к популярности",
             """
                     Вы вспомнили про свой старый канал на YuTube.Что вы сделаете?
                     (1)Вы купите новую камеру и микофон и начнёте снимать новые видео.
@@ -10,25 +9,14 @@ public class Story extends Еpisode {
                     (3)Будите снимать видео на старую камеру""", 3);
 
     Story() {
-        //now_episode = new Еpisode();
-        start.many_situation[0] = new Еpisode("Успех!",
-                "Вы потратили много денег, но ваш канал вырос в 5 раз и заработали столько же, сколько вы потратили.",
-                4000, 0, 20);
-        start.many_situation[2] = new Еpisode("Большой успех!",
-                "Вы не опустили руки ваш канал вырос в 5 раз благодаря вашему усердию.",
+        start.many_situation[0] = new Episode("Успех!",
+                "Вы потратили много денег, но ваш канал вырос и заработали столько же, сколько вы потратили.",
+                4000, 1000, 20);
+        start.many_situation[2] = new Episode("Большой успех!",
+                "Вы не опустили руки ваш канал вырос благодаря вашему усердию.",
                 4000, 20000, 100);
-        start.many_situation[1] = new Еpisode("Вы упустили свою популярность.",
+        start.many_situation[1] = new Episode("Вы упустили свою популярность.",
                 "Вам нужно искать другие способы заработка.", -1000, 0, -2);
 
-    }
-
-    public void play(int num) {
-        if(num-1>=start.many_situation.length)
-            //now_episode=now_episode.many_situation[num-1];
-         System.out.println("Введите число от 1 до " + start.many_situation.length);
-    }
-
-    public boolean isEnd() {
-        return start.many_situation.length==0;
     }
 }

@@ -11,18 +11,19 @@ public class Main {
         System.out.println("Введите ваше имя:");
         role = new Character(a.next());
         story = new Story();
+        System.out.println(story.start.situation+"\n"+story.start.value);
         while (true){
-            role.reputation += story.dReputation;
-            role.money += story.dMoney;
-            role.career += story.dCareer;
+            int num = a.nextInt();
+            System.out.println(story.start.many_situation[num-1].situation+"\n"+story.start.many_situation[num-1].value);
+            role.plus(story.start.many_situation[num-1].dCareer,
+                    story.start.many_situation[num-1].dMoney,
+                    story.start.many_situation[num-1].dReputation);
             System.out.println("Ваши подписчики: "+role.career+"; ваша репутация: "+role.reputation+
                     "; ваши сбережения: "+role.money+".");
-            System.out.println(story.start.situation+"\n"+story.start.value);
-            if(story.isEnd()){
-                System.out.println("Конец!");
-                return;
+            if(role.money>=100000 && role.reputation>=100){
+                System.out.println(role.ret_name()+", вы достигли ошеломительного успеха!\nПродолжайте в том же духе!");
+                break;
             }
-            story.play(a.nextInt());
         }
     }
 }

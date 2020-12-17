@@ -1,14 +1,14 @@
 package com.company;
 
-public class Еpisode {
-    protected Еpisode[] many_situation;
+public class Episode {
+    protected Episode[] many_situation;
     protected String situation;
     protected String value;
     protected int dCareer;
     protected int dMoney;
     protected int dReputation;
 
-    protected Еpisode(String situation, String value, int dcareer, int dmoney, int dreputation) {
+    protected Episode(String situation, String value, int dcareer, int dmoney, int dreputation) {
         this.situation = situation;
         this.value = value;
         dCareer = dcareer;
@@ -16,11 +16,11 @@ public class Еpisode {
         dReputation = dreputation;
     }
 
-    protected Еpisode(String situation, String value, int variants) {
+    protected Episode(String situation, String value, int variants) {
         this.situation = situation;
         this.value = value;
-        many_situation = new Еpisode[variants];
+        many_situation = new Episode[variants];
     }
 
-    Еpisode(){}
+    Episode(){}
 }
